@@ -126,7 +126,15 @@ body {
 .steam-logo {
     width: 40px;
     height: auto;
+    filter: grayscale(100%); /* Make the logo grayscale */
+    transition: filter 0.3s ease, opacity 0.3s ease;
 }
+
+.steam-logo:hover {
+    filter: grayscale(0%); /* Remove the grayscale on hover */
+    opacity: 0.8; /* Add transparency on hover */
+}
+
 
 /* -- Media Query for Mobile Styles -- */
 @media (max-width: 768px) {
