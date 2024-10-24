@@ -126,13 +126,13 @@ body {
 .steam-logo {
     width: 40px;
     height: auto;
-    filter: grayscale(100%); /* Make the logo grayscale */
+    filter: sepia(100%) saturate(500%) hue-rotate(-35deg) brightness(90%);
     transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .steam-logo:hover {
-    filter: grayscale(0%); /* Remove the grayscale on hover */
-    opacity: 0.8; /* Add transparency on hover */
+    filter: sepia(100%) saturate(500%) hue-rotate(-35deg) brightness(110%);
+    opacity: 0.9; /* Add slight transparency on hover */
 }
 
 
