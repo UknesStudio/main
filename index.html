@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uknes Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">UKNES STUDIO</div>
+        <ul class="nav-links">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="hamburger">&#9776;</button> <!-- Hamburger icon for mobile only -->
+        <a href="#" class="cta-button">Get the Game</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="availability">
+                <p>Available for</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo" class="steam-logo">
+            </div>            
+            <div class="hero-text">
+                <h1>ONE NIGHT AT THE SHACK</h1>
+                <p>Immerse yourself in a spine-chilling horror experience. Solve puzzles and survive the night in an eerie shack haunted by restless spirits.</p>
+                <a href="#" class="hero-button">Play the Demo</a>
+            </div>
+        </div>
+        <div class="background-image"></div>
+    </section>
+
+    <!-- Add your script for the hamburger functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', (event) => {
+                navLinks.classList.toggle('active');
+                event.stopPropagation();
+            });
+
+            document.addEventListener('click', (event) => {
+                if (navLinks.classList.contains('active') && !navLinks.contains(event.target) && event.target !== hamburger) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>    
+</body>
+</html>

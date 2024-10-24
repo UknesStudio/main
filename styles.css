@@ -1,0 +1,217 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Keep it horizontal on desktop */
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Call to Action Button */
+.cta-button {
+    background-color: #f5a623;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Hide hamburger icon on desktop by default */
+.hamburger {
+    display: none; /* Hidden on desktop by default */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    padding: 100px;
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 56px;
+    line-height: 1.2;
+    font-weight: 900;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+    max-width: 500px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #f5a623;
+    color: #000;
+    padding: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Background Image with Gradient */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent), url('one_night_at_the_shack.png');
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.availability p {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.steam-logo {
+    width: 40px;
+    height: auto;
+}
+
+/* -- Media Query for Mobile Styles -- */
+@media (max-width: 768px) {
+    /* Show hamburger icon on mobile */
+    .hamburger {
+        display: block; /* Show on mobile screens */
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+        background: none;
+        border: none;
+    }
+
+    /* Mobile Navigation */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0; /* Set to right: 0 */
+        width: 250px;
+        height: 100%;
+        background-color: #000;
+        padding-top: 60px;
+        transform: translateX(100%); /* Move it off-screen to the right */
+        transition: transform 0.3s ease; /* Smooth sliding effect */
+        z-index: 10; /* Ensure it's on top */
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    /* Slide-in Navigation Menu */
+    .nav-links.active {
+        transform: translateX(0); /* Slide into view */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 18px;
+    }
+
+    /* Adjust Hero Section for mobile */
+    .hero-content {
+        padding: 20px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-button {
+        padding: 10px 20px;
+    }
+
+    /* Responsive availability section */
+    .availability {
+        justify-content: center;
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .hero-button {
+        padding: 8px 15px;
+    }
+
+    .steam-logo {
+        width: 30px;
+    }
+}
