@@ -126,13 +126,6 @@ body {
 .steam-logo {
     width: 40px;
     height: auto;
-    filter: invert(53%) sepia(85%) saturate(500%) hue-rotate(-35deg) brightness(105%);
-    transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-.steam-logo:hover {
-    filter: invert(53%) sepia(85%) saturate(500%) hue-rotate(-35deg) brightness(120%);
-    opacity: 0.9; /* Add slight transparency on hover */
 }
 
 
