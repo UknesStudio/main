@@ -9,34 +9,70 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">UKNES STUDIO</div>
+        <img src="Logos/uknes_studio_logo_alone.png" class="logo" alt="Uknes Studio Logo">
         <ul class="nav-links">
             <li><a href="#">News</a></li>
             <li><a href="#">Games</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <button class="hamburger">&#9776;</button> <!-- Hamburger icon for mobile only -->
         <a href="#" class="cta-button">Get the Game</a>
+        <button class="hamburger">&#9776;</button> <!-- Hamburger icon for mobile only -->
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Background Image -->
     <section class="hero">
+        <div class="background-image"></div>
         <div class="hero-content">
             <div class="availability">
                 <p>Available for</p>
-                <img src="steam_logo.png" alt="Steam Logo" class="steam-logo">
+                <img src="Logos/steam_logo.png" alt="Steam Logo" class="steam-logo">
             </div>            
             <div class="hero-text">
                 <h1>ONE NIGHT AT THE SHACK</h1>
                 <p>Immerse yourself in a spine-chilling horror experience. Solve puzzles and survive the night in an eerie shack haunted by restless spirits.</p>
-                <a href="#" class="hero-button">Play the Demo</a>
+                <a href="https://store.steampowered.com/app/3109540/One_Night_At_The_Shack/" class="hero-button">Play the Demo</a>
             </div>
         </div>
-        <div class="background-image"></div>
     </section>
 
-    <!-- Add your script for the hamburger functionality -->
+    <!-- Games Section with Animation -->
+    <section class="games-section">
+        <h2>Our Games</h2>
+        <div class="game-card">
+            <img src="Assets/one_night_at_the_shack_cover.png" alt="One Night at the Shack">
+            <div class="game-info">
+                <h3>One Night at the Shack</h3>
+                <p>Experience a night of horror and survival.</p>
+                <a href="#" class="game-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Add additional game cards as needed -->
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h2>About Uknes Studio</h2>
+        <p>Uknes Studio is dedicated to creating immersive, atmospheric games that push the boundaries of storytelling and player experience.</p>
+    </section>
+
+    <!-- Contact Section with Social Icons -->
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <a href="#">Email Us</a>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@uknes.studio"><img src="Logos/tiktok_logo.png" alt="TikTok"></a>
+                <a href="https://x.com/uknes_studio"><img src="Logos/x_logo.png" alt="X"></a>
+                <a href="https://www.instagram.com/uknes.studio/"><img src="Logos/instagram_logo.png" alt="Instagram"></a>
+                <a href="https://github.com/UknesStudio"><img src="Logos/github_logo.png" alt="Github"></a>
+                <a href="https://uknesstudio.itch.io/"><img src="Logos/itch_io_logo.png" alt="Itch.io"></a>
+                <a href="https://store.steampowered.com/curator/45118928"><img src="Logos/steam_logo.png" alt="Steam"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom JavaScript for Hamburger Menu and Scroll Animations -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const hamburger = document.querySelector('.hamburger');
@@ -52,7 +88,25 @@
                     navLinks.classList.remove('active');
                 }
             });
+
+            // Scroll Animation for Sections
+            const sections = document.querySelectorAll('section');
+            const options = {
+                threshold: 0.3
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
-    </script>    
+    </script>
 </body>
 </html>
